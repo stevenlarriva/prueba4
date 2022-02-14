@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 1er Ejemplo con la directiva v-if -->
+    <div id="app-3">
+        <span v-if="valor1">Ahora me vez!!</span>
+        <br>
+
+    <!-- 2do ejemplo con v-else -->
+        <h2 v-if="valor2">Valor2 es verdadero</h2>
+        <h2 v-else="valor2">Valor2 es falso</h2>
+    
+    <!-- 3er ejemplo con v-else-if -->
+        <div v-if="valor3 === 'A'">
+            Valor 3 es igual a: <strong>A</strong>
+        </div>
+
+        <div v-else-if="valor3 === 'B'">
+            Valor 3 es igual a: <strong>B</strong>
+        </div>
+
+        <div v-else-if="valor3 === 'C'">
+            Valor 3 es igual a: <strong>C</strong>
+        </div>
+        
+        <div v-else> No es ni A, B, C</div>
+
+    </div>
+
+
+    
+    <script>
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                valor1: true,
+                valor2: true,
+                valor3: 'A'
+            }
+        });
+        
+        // let encabezado = document.getElementById("encabezado").innerHTML;
+        // console.log(encabezado)
+        // console.log(encabezado.length)
+        // if(encabezado.length === 13){
+        //     console.log("Son 13 caracteres")
+        // }else{
+        //     console.log("No son 13 caracteres")
+        // }
+    </script>
+</body>
+</html>

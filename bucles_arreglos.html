@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+<body>
+    <h1>Bucles y arreglos</h1>
+
+    <div id="app-4">
+        <!-- Uso del v-for con arreglos -->
+        <!-- 1er Ejemplo v-for basico usando una lista ordenada -->
+        <ol>
+            <li v-for="color in colores">{{ color.nombre }}</li>
+        </ol>
+        
+        <!-- 2do ejemplo con v-for con indices usando una lista no ordenada -->
+        <ul>
+            <li v-for="(pais, index) in paises">
+                {{index}} - {{ pais.nombre }}</li>
+        </ul>
+
+        <!-- 3er ejemplo uso de v-for con objetos y uso de value -->
+        <ul>
+            <li v-for="value in objeto">
+                {{ value }}
+            </li>
+        </ul>
+
+        <!-- 4to ejemplo con objeto y uso de value y key -->
+        <ul>
+            <li v-for="(value, key) in objeto">
+                {{ key }} = {{ value }}
+            </li>
+        </ul>
+
+        <!-- 5to ejemplo con objeto y uso de index, value y key -->
+        <ul>
+            <li v-for="(value, key, index) in objeto">
+                {{ index }} - {{ key }} - {{ value }} 
+            </li>
+        </ul>
+
+        <!-- 6to ejemplo con rango de enteros -->
+        <div>
+            <span v-for="n in 10">
+                {{ n }} <br>
+            </span>
+        </div>
+
+    </div>
+
+    <script>
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                colores: [
+                    {nombre: 'Azul'},
+                    {nombre: 'Verde'},
+                    {nombre: 'Blanco'}
+                ],
+                // 2do ejemplo
+                paises: [
+                    {nombre: 'Colombia'},
+                    {nombre: 'Ecuador'},
+                    {nombre: 'Chile'},
+                ],
+                objeto: {
+                    nombre: 'Juan',
+                    apellido: 'Perez',
+                    edad: 25
+                }
+            }
+
+        })
+
+    </script>
+    
+</body>
+</html>

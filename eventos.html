@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <h1>Eventos</h1>
+    <!-- <div id="app-5">
+        <button v-on:click="contador += 1">Suma de a 1</button>
+        <p>Hicimos clic en el botón {{ contador }} veces</p>
+    </div> -->
+    <div id="app-6">
+        <button v-on:click="saludar">Presiona para saludar</button>
+
+        <button @click="saludar2('Hola mundo') "> Enviar el saludo</button>
+    </div>
+
+    <script>
+        // var cuenta = new Vue({
+        //     el: '#app-5',
+        //     data:{
+        //         contador:0
+        //     }
+        // })
+
+        var app6 = new Vue({
+            el: '#app-6',
+            data: {
+                name: 'Mundo'
+            },
+            methods: {
+                saludar: function(event){
+                alert(`Hola ${this.name}`)
+                },
+                saludar2: function(mensaje){
+                    alert(mensaje)
+                }
+            },
+        })
+    </script>    
+</body>
+</html>

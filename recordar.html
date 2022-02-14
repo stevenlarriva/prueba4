@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app-6">
+        <!-- <h1>Mi nombre es {{ nombre }}</h1>
+        <input v-model="nombre" type="text"/>
+
+        <ul>
+            <li v-for="(persona, index) in personas">
+                {{ index }} - {{persona.nombre }}
+            </li>
+            <br>
+            <li v-for="(value, key, index) in objeto">
+                {{ index }} - {{ key }} - {{ value }}
+            </li>
+        </ul> -->
+
+        <h2 v-if="personas[0].nombre === 'Guillermo' ">El nombre es Guillermo</h2>
+        <h2 v-else>El nombre no es Guillermo es {{ personas[0].nombre }}</h2>
+
+        <ul>
+            <li v-for="n in 10"> {{ n }} </li>
+        </ul>
+
+    </div>
+    
+
+    <script>
+        var app6 = new Vue({
+            el: '#app-6',
+            data: {
+                nombre: 'Guillermo',
+                personas: [
+                    {nombre: 'Guillermo'},
+                    {nombre: 'Kevin'},
+                    {nombre: 'Steven'},
+                    {nombre: 'Washington'}
+                ],
+                objeto: {
+                    nombre: 'Guillermo',
+                    apellido: 'Larriva',
+                    edad: 25
+                }
+            }
+        })
+    </script>
+</body>
+</html>
